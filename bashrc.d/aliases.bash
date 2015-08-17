@@ -12,6 +12,7 @@ if [ "$(uname)" == "Darwin" ]; then
     alias ejectall="osascript -e 'tell application \"Finder\" to eject (every disk whose ejectable is true)'"
     alias lastconnected='defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences |grep LastConnected -A 7'
     alias dum='du -h -d 1'
+    alias turf_DSStore='find . -name '*.DS_Store' -type f -delete'
 fi
 
 if [ -f "/etc/redhat-release" ]; then
@@ -22,4 +23,10 @@ fi
 if [ -f "/etc/debian_version" ]; then
     # Ubuntu/Devian specific aliases
     alias dum='du -h -d 1'
+fi
+
+if [ -f "/usr/bin/VBoxManage" ]; then
+    # VirtualBox aliases
+    alias vbox_vms='VBoxManage list vms'
+    alias vbox_running='VBoxManage list runningvms'
 fi
