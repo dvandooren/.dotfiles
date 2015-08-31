@@ -13,6 +13,7 @@ if [ "$(uname)" == "Darwin" ]; then
     alias lastconnected='defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences |grep LastConnected -A 7'
     alias dum='du -h -d 1'
     alias turf_DSStore='find . -name '*.DS_Store' -type f -delete'
+    alias screencap='screencapture -i -c'
 fi
 
 if [ -f "/etc/redhat-release" ]; then
