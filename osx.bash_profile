@@ -28,3 +28,7 @@ if [ -d "$HOME"/.profile.d ] ; then
     done
     unset -v profile
 fi
+
+if [ -f ~/.bashrc ]; then 
+    . ~/.bashrc; 
+fi 
