@@ -29,6 +29,5 @@ if [ -d "$HOME"/.profile.d ] ; then
     unset -v profile
 fi
 
-if [ -f ~/.bashrc ]; then 
-    . ~/.bashrc; 
-fi 
+[[ -s ~/.bashrc ]] && source ~/.bashrc
+
