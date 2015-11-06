@@ -6,6 +6,7 @@ alias du='du -h'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias http_server='python -m SimpleHTTPServer'
 
 if [ "$(uname)" == "Darwin" ]; then
     # Mac OSX specific aliases
