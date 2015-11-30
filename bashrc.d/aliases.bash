@@ -15,6 +15,7 @@ if [ "$(uname)" == "Darwin" ]; then
     alias dum='du -h -d 1'
     alias turf_DSStore='find . -name '*.DS_Store' -type f -delete'
     alias screencap='screencapture -i -c'
+    alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;'
 fi
 
 if [ -f "/etc/redhat-release" ]; then
