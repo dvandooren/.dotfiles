@@ -16,4 +16,22 @@ if [ -f "/etc/debian_version" ]; then
 fi
 
 # Common Functions
+remux-mkv-aac() {
+    if (($# < 1 )) ; then
+        printf 'usage: %s <file.jpg>\n' "$FUNCNAME" >&2
+        return 2
+    fi
 
+    f=$1
+    ffmpeg -i "$f" -c:v copy -c:a aac -b:a 256k -strict -2 "${f%mkv}mp4"
+}
+
+remux-mkv() {
+    if (($# < 1 )) ; then
+        printf 'usage: %s <file.jpg>\n' "$FUNCNAME" >&2
+        return 2
+    fi
+
+    f=$1
+    ffmpeg -i "$f" -c copy "${f%mkv}mp4"
+}
