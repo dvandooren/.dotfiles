@@ -7,6 +7,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias http_server='python -m SimpleHTTPServer'
+alias testssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 if [ "$(uname)" == "Darwin" ]; then
     # Mac OSX specific aliases
@@ -16,6 +17,8 @@ if [ "$(uname)" == "Darwin" ]; then
     alias turf_DSStore='find . -name '*.DS_Store' -type f -delete'
     alias screencap='screencapture -i -c'
     alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;'
+    alias timemachine_speedup='sudo sysctl debug.lowpri_throttle_enabled=0'
+    alias timemachine_normal='sudo sysctl debug.lowpri_throttle_enabled=1'
 fi
 
 if [ -f "/etc/redhat-release" ]; then
