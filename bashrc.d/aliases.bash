@@ -7,7 +7,8 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias http_server='python -m SimpleHTTPServer'
-alias testssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+alias sshtmp='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+alias scptmp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 if [ "$(uname)" == "Darwin" ]; then
     # Mac OSX specific aliases
