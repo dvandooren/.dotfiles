@@ -17,7 +17,9 @@ if [ "$(uname)" == "Darwin" ]; then
     alias dum='du -h -d 1'
     alias turf_DSStore='find . -name '*.DS_Store' -type f -delete'
     alias screencap='screencapture -i -c'
-    alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;'
+    # alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;'
+    alias flushdns='sudo killall -HUP mDNSResponder;'
+    alias flushdns2='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache;'
     alias timemachine_speedup='sudo sysctl debug.lowpri_throttle_enabled=0'
     alias timemachine_normal='sudo sysctl debug.lowpri_throttle_enabled=1'
 fi
