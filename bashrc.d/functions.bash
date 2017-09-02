@@ -17,7 +17,7 @@ fi
 
 # Common Functions
 remux-mkv-aac() {
-    if (($# < 1 )) ; then
+    if (( $# < 1 )) ; then
         printf 'usage: %s <file.jpg>\n' "$FUNCNAME" >&2
         return 2
     fi
@@ -27,11 +27,21 @@ remux-mkv-aac() {
 }
 
 remux-mkv() {
-    if (($# < 1 )) ; then
+    if (( $# < 1 )) ; then
         printf 'usage: %s <file.jpg>\n' "$FUNCNAME" >&2
         return 2
     fi
 
     f=$1
     ffmpeg -i "$f" -c copy "${f%mkv}mp4"
+}
+
+grab-hls() {
+    if (( $# < 2 )); then
+        printf 'usage: %s <file.mp4> <url>\n' "$FUNCNAME" >&2
+        return 2
+    fi
+    f=$1
+    u=$2
+    ffmpeg -i "$u" -c copy -bsf:a aac_adtstoasc "$f"
 }
