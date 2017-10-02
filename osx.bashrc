@@ -23,6 +23,9 @@ HISTCONTROL=ignoreboth
 # Keep the times of the commands in history
 HISTTIMEFORMAT='%F %T  '
 
+# Needed to run Ansible
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Load any supplementary scripts
 if [[ -d $HOME/.bashrc.d ]] ; then
