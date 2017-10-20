@@ -9,6 +9,8 @@ alias egrep='egrep --color=auto'
 alias http_server='python -m SimpleHTTPServer'
 alias sshtmp='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias scptmp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+alias sshpass='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+alias scppass='scp -o PreferredAuthentications=password -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias rwget='wget -r --no-parent --reject "index.html*"'
 
 if [ "$(uname)" == "Darwin" ]; then
