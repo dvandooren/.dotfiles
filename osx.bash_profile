@@ -11,8 +11,8 @@ else
 fi
 
 if [ "$color_prompt" = yes ]; then
-    export PS1="\[\e[01;32m\]\u@\H\[\e[01;34m\]:\W \$\[\e[0m\] "
-    export SUDO_PS1="\[\e[33;01;41m\]\u@\H\\[\e[0m\]\[\e[01;34m\]:\W \$\[\e[0m\] "
+    export PS1="\[\e[00;32;100m\]\u@\H\[\e[00;34m\]:\W \$\[\e[0;0m\] "
+    export SUDO_PS1="\[\e[00;30;41m\]\u@\H\\[\e[0m\]\[\e[00;34m\]:\W \$\[\e[0m\] "
 else
     export PS1="\u@\H:\W \$ "
 fi
