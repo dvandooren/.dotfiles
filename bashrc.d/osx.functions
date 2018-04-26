@@ -8,3 +8,10 @@ set-wallpaper() {
     osascript -e 'tell application "Finder" to set desktop picture to POSIX file "$1"'
 }
 
+mark() {
+	if [ $1 ]; then
+		open -a "Marked 2" $1
+	else
+		open -a "Marked 2"
+	fi
+}
