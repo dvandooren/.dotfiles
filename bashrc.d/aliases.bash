@@ -12,6 +12,7 @@ alias scptmp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias sshpass='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias scppass='scp -o PreferredAuthentications=password -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias rwget='wget -r --no-parent --reject "index.html*"'
+alias gpullall='ls -d */ | xargs -I{} sh -c "echo '"'"'### Pulling {}'"'"'; git -C {} pull"'
 
 if [ "$(uname)" == "Darwin" ]; then
     # Mac OSX specific aliases
@@ -25,6 +26,8 @@ if [ "$(uname)" == "Darwin" ]; then
     alias flushdns2='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache;'
     alias timemachine_speedup='sudo sysctl debug.lowpri_throttle_enabled=0'
     alias timemachine_normal='sudo sysctl debug.lowpri_throttle_enabled=1'
+    alias fixdockicons='defaults delete com.apple.dock; killall Dock; echo "Reboot is reocmmended"'
+    alias killopenwithdups='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user;killall Finder;echo "Rebuilt Open With, relaunching Finder"'
 fi
 
 if [ -f "/etc/redhat-release" ]; then
