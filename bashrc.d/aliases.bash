@@ -13,6 +13,8 @@ alias sshpass='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=
 alias scppass='scp -o PreferredAuthentications=password -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias rwget='wget -r --no-parent --reject "index.html*"'
 alias gpullall='ls -d */ | xargs -I{} sh -c "echo '"'"'### Pulling {}'"'"'; git -C {} pull"'
+alias gcomaster='ls -d */ | xargs -I{} sh -c "echo '"'"'### Checkout master {}'"'"'; git -C {} checkout master'
+alias gcodevelopment='ls -d */ | xargs -I{} sh -c "echo '"'"'### Checkout development {}'"'"'; git -C {} checkout development'
 
 if [ "$(uname)" == "Darwin" ]; then
     # Mac OSX specific aliases
