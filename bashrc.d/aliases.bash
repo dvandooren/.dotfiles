@@ -30,6 +30,7 @@ if [ "$(uname)" == "Darwin" ]; then
     alias timemachine_normal='sudo sysctl debug.lowpri_throttle_enabled=1'
     alias fixdockicons='defaults delete com.apple.dock; killall Dock; echo "Reboot is reocmmended"'
     alias killopenwithdups='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user;killall Finder;echo "Rebuilt Open With, relaunching Finder"'
+    alias rpwd='LC_CTYPE=C tr -dc "A-Za-z1-9!@%^" < /dev/urandom | fold -w ${1:-20} | head -n 1| tee /dev/tty | pbcopy'
 fi
 
 if [ -f "/etc/redhat-release" ]; then
