@@ -1,3 +1,7 @@
+function _update_ps1() {
+    PS1="$(/usr/local/bin/powerline-go -condensed -colorize-hostname -cwd-max-depth 2 -mode patched -error $?)"
+}
+
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
@@ -10,12 +14,17 @@ else
     color_prompt=
 fi
 
-if [ "$color_prompt" = yes ]; then
-    export PS1="\[\e[00;32;100m\]\u@\H\[\e[00;34m\]:\W \$\[\e[0;0m\] "
+if [ "$TERM" == "linux" ] && [ "$color_prompt" = yes ]; then
+    export PS1="\[\e[00;32;47m\]\u@\H\[\e[00;34m\]:\W \$\[\e[0;0m\] "
     export SUDO_PS1="\[\e[00;30;41m\]\u@\H\\[\e[0m\]\[\e[00;34m\]:\W \$\[\e[0m\] "
 else
     export PS1="\u@\H:\W \$ "
 fi
+
+if [ "$TERM" == "xterm-256color" ] && [ -f "/usr/local/bin/powerline-go" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
 
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
