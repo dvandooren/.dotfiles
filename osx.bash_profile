@@ -1,5 +1,5 @@
 function _update_ps1() {
-    PS1="$(/usr/local/bin/powerline-go -condensed -colorize-hostname -cwd-max-depth 2 -mode patched -error $?)"
+    PS1="$(/usr/local/bin/powerline-go -condensed -colorize-hostname -cwd-max-depth 5 -mode patched -modules "aws,kube,docker,nix-shell,venv,user,ssh,host,cwd,newline,perms,git,hg,jobs,exit,root,vgo" -error $?)"
 }
 
 export CLICOLOR=1
