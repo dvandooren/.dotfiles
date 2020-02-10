@@ -17,7 +17,7 @@ alias gpullall='ls -d */ | xargs -I{} sh -c "echo '"'"'### Pulling {}'"'"'; git 
 alias gcomaster='ls -d */ | xargs -I{} sh -c "echo '"'"'### Checkout master {}'"'"'; git -C {} checkout master"'
 alias gcodevelopment='ls -d */ | xargs -I{} sh -c "echo '"'"'### Checkout development {}'"'"'; git -C {} checkout development"'
 
-if [ "$(uname)" == "Darwin" ]; then
+if [[ "$(uname)" == "Darwin" ]]; then
     # Mac OSX specific aliases
     alias ejectall="osascript -e 'tell application \"Finder\" to eject (every disk whose ejectable is true)'"
     alias lastconnected='defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences |grep LastConnected -A 7'
@@ -34,17 +34,17 @@ if [ "$(uname)" == "Darwin" ]; then
     alias rpwd='LC_CTYPE=C tr -dc "A-Za-z1-9!@%^" < /dev/urandom | fold -w ${1:-20} | head -n 1| tee /dev/tty | pbcopy'
 fi
 
-if [ -f "/etc/redhat-release" ]; then
+if [[ -f "/etc/redhat-release" ]]; then
     # CentOS/Redhat specific aliases
   alias dum='du -h --max-depth=1'
 fi
 
-if [ -f "/etc/debian_version" ]; then
+if [[ -f "/etc/debian_version" ]]; then
     # Ubuntu/Devian specific aliases
     alias dum='du -h -d 1'
 fi
 
-if [ -f "/usr/bin/VBoxManage" ]; then
+if [[ -f "/usr/bin/VBoxManage" ]]; then
     # VirtualBox aliases
     alias vbox_vms='VBoxManage list vms'
     alias vbox_running='VBoxManage list runningvms'
