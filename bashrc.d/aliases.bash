@@ -16,6 +16,7 @@ alias rwget='wget -r --no-parent --reject "index.html*"'
 
 if [[ "$(uname)" == "Darwin" ]]; then
     # Mac OSX specific aliases
+    alias tar='tar --no-xattrs --disable-copyfile '
     alias ejectall="osascript -e 'tell application \"Finder\" to eject (every disk whose ejectable is true)'"
     alias lastconnected='defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences |grep LastConnected -A 7'
     alias dum='du -h -d 1'
@@ -29,6 +30,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
     alias fixdockicons='defaults delete com.apple.dock; killall Dock; echo "Reboot is reocmmended"'
     alias killopenwithdups='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user;killall Finder;echo "Rebuilt Open With, relaunching Finder"'
     alias rpwd='LC_CTYPE=C tr -dc "A-Za-z1-9!@%^" < /dev/urandom | fold -w ${1:-20} | head -n 1| tee /dev/tty | pbcopy'
+    alias netstat-tlupn='sudo lsof -iTCP -sTCP:LISTEN -iUDP -n -P'
 fi
 
 if [[ -f "/etc/redhat-release" ]]; then
